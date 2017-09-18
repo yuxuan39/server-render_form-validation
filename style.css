@@ -1,0 +1,94 @@
+body {
+    background-color: #F3DE2C;
+    display: flex;
+    justify-content: center;
+}
+
+#sign-up {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+dl {
+    margin: 5px 0 0 0;
+}
+
+dd {
+    width: 280px;
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+input {
+    font-size: 1rem;
+    border-color: none;
+    border-radius: 5px;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.content-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#sign-up-btn {
+    background-color: #15B029;
+    border: none;
+    width: 80px;
+    font-size: 1rem;
+    padding: 5px;
+    -webkit-box-shadow: 0px 6px 0px #0B7619;
+    -moz-box-shadow: 0px 6px 0px #0B7619;
+    box-shadow: 0px 6px 0px #0B7619;
+}
+
+#sign-in-btn {
+    background-color: #F19023;
+    border: none;
+    width: 80px;
+    font-size: 1rem;
+    padding: 5px;
+    -webkit-box-shadow: 0px 6px 0px #C26600;
+    -moz-box-shadow: 0px 6px 0px #C26600;
+    box-shadow: 0px 6px 0px #C26600;
+}
+
+#sign-out-btn {
+    background-color: #4B40C8;
+    color: white;
+    border: none;
+    width: 80px;
+    font-size: 1rem;
+    padding: 5px;
+    -webkit-box-shadow: 0px 6px 0px #2B238F;
+    -moz-box-shadow: 0px 6px 0px #2B238F;
+    box-shadow: 0px 6px 0px #2B238F;
+}
+
+#sign-in {
+    margin: 200px;
+}
+
+#sign-out {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0 0;
+}
