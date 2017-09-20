@@ -6,42 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
     <link type="text/css" rel="normalize.css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
     <title>Server Render Form Validation</title>
 </head>
 
 <body>
     <div id="sign-out">
         <div class="content-right">
-            <button id="sign-out-btn" type="button">Sign out</button>
+            <button id="sign-out-btn" type="button" onclick="location.href='sign-up.html'">Sign out</button>
         </div>
         <dl>
             <dd id="ID-dd">
                 <label>ID</label>
-                <p>a1b2c3d4f6g7</p>
+                <p id="user-ID">a1b2c3d4f6g7</p>
             </dd>
             <dd id="username-dd">
                 <label>Username</label>
-                <p>abcdef</p>
+                <p id="user-username">abcdef</p>
             </dd>
             <dd id="email-dd">
                 <label>Email</label>
-                <p>ccc@gmail.com</p>
+                <p id="user-email">ccc@gmail.com</p>
             </dd>
             <dd id="phone-dd">
                 <label>Phone Number</label>
-                <p>0912345678</p>
+                <p id="user-phone">0912345678</p>
             </dd>
             <dd id="birth-dd">
                 <label>Birth</label>
-                <p>1994/01/01</p>
+                <p id="user-birth">1994/01/01</p>
             </dd>
             <dd id="password-dd">
                 <label>Password</label>
-                <p>123456</p>
+                <p id="user-password">123456</p>
             </dd>
         </dl>
     </div>
+    <script type="text/javascript" src="../js/userdata.js"></script>
 </body>
 
 </html>
