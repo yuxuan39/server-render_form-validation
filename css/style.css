@@ -78,9 +78,9 @@ input {
     width: 80px;
     font-size: 1rem;
     padding: 5px;
-    -webkit-box-shadow: 0px 6px 0px #2B238F;
-    -moz-box-shadow: 0px 6px 0px #2B238F;
-    box-shadow: 0px 6px 0px #2B238F;
+    -webkit-box-shadow: 0px 6px 0px #231C7B;
+    -moz-box-shadow: 0px 6px 0px #231C7B;
+    box-shadow: 0px 6px 0px #231C7B;
 }
 
 #sign-in {
@@ -91,4 +91,9 @@ input {
     display: flex;
     flex-direction: column;
     padding: 30px 0 0 0;
+}
+
+p {
+    border-bottom: 1px solid #4B40C8;
+    padding: 8px;
 }

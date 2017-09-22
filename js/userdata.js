@@ -3,6 +3,7 @@ let userName = document.getElementById('user-username')
 let userEmail = document.getElementById('user-email')
 let userPhone = document.getElementById('user-phone')
 let userBirth = document.getElementById('user-birth')
+const signInBtn = document.getElementById('sign-out-btn')
 
 const token = sessionStorage.getItem('userdata')
 let url = new URL("http://free-gce.akiya.com.tw:4000/users/me")
@@ -39,3 +40,23 @@ const getData = () => {
 }
 getData()
 
+
+signInBtn.addEventListener('click', function (evt) {
+    signOut()
+})
+
+const HOST = 'http://free-gce.akiya.com.tw:4000/auth/logout'
+const signOut = (evt) => {
+    fetch(HOST, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    }).then(res =>
+        console.log(res),
+        alert('Signed out')
+        ).catch(err => {
+            console.log(err)
+            alert('Oops!')
+        })
+}
