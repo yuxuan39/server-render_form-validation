@@ -42,10 +42,15 @@ const getData = () => {
 getData()
 
 signOutBtn.addEventListener('click', function(evt) {
-  signInBtn.style.boxShadow = 'none'
-  signInBtn.style.top = '3px'
-  signInBtn.style.borderBottom = '3px solid #231C7B'
-  signOut()
+  signOutBtn.style.boxShadow = 'none'
+  signOutBtn.style.top = '3px'
+  signOutBtn.style.borderBottom = '3px solid #231C7B'
+  setTimeout(() => {
+    siOutBtn.style.top = '0'
+    siOutBtn.style.borderBottom = 'none'
+    siOutBtn.style.boxShadow = '0px 6px 0px #231C7B'
+  }, 100)
+  setTimeout(signOut(), 101)
 })
 
 const HOST = 'http://free-gce.akiya.com.tw/auth/logout'

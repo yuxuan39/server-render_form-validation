@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F3DE2C;
     display: flex;
@@ -70,6 +74,7 @@ input {
 
 #sign-in-btn {
     background-color: #F19023;
+    position: relative;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -84,6 +89,7 @@ input {
 
 #sign-out-btn {
     background-color: #4B40C8;
+    position: relative;
     outline: none;
     color: white;
     border: none;

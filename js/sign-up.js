@@ -7,6 +7,7 @@ const phone = document.getElementById('phone')
 const birth = document.getElementById('birth')
 const password = document.getElementById('password')
 const signUpBtn = document.getElementById('sign-up-btn')
+const signInBtn = document.getElementById('sign-in-btn')
 
 const phoneRegex = /^09\d{2}-?\d{3}-?\d{3}$/
 const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
@@ -23,25 +24,36 @@ const warnEmail = document.createElement('p')
 warnEmail.classList = 'warn'
 warnEmail.innerText = 'Invaild email'
 
+signInBtn.addEventListener('click', function(evt) {
+  signInBtn.style.boxShadow = 'none'
+  signInBtn.style.top = '3px'
+  signInBtn.style.borderBottom = '3px solid #C26600'
+  setTimeout(() => {
+    signInBtn.style.top = '0'
+    signInBtn.style.borderBottom = 'none'
+    signInBtn.style.boxShadow = '0px 6px 0px #C26600'
+  }, 100)
+})
+
 phone.addEventListener('blur', evt => {
-  if (phoneRegex.test(phone.value) === false) {
-    phoneDd.appendChild(warnPhone)
+  if (!phoneRegex.test(phone.value)) {
+    return phoneDd.appendChild(warnPhone)
   }
-  if (phoneRegex.test(phone.value) === true) {
-    if (warnPhone) {
-      phoneDd.removeChild(warnPhone)
-    }
+
+  const warn = phoneDd.querySelector('p')
+  if (warn) {
+    phoneDd.removeChild(warn)
   }
 })
 
 email.addEventListener('blur', evt => {
-  if (emailRegex.test(email.value) === false) {
-    emailDd.appendChild(warnEmail)
+  if (!emailRegex.test(email.value)) {
+    return emailDd.appendChild(warnEmail)
   }
-  if (emailRegex.test(email.value) === true) {
-    if (warnEmail) {
-      emailDd.removeChild(warnEmail)
-    }
+
+  const warn = emailDd.querySelector('p')
+  if (warn) {
+    emailDd.removeChild(warn)
   }
 })
 
@@ -49,6 +61,11 @@ signUpBtn.addEventListener('click', evt => {
   signUpBtn.style.boxShadow = 'none'
   signUpBtn.style.top = '3px'
   signUpBtn.style.borderBottom = '3px solid #0B7619'
+  setTimeout(() => {
+    signUpBtn.style.top = '0'
+    signUpBtn.style.borderBottom = 'none'
+    signUpBtn.style.boxShadow = '0px 6px 0px #0B7619'
+  }, 100)
   const data = {
     username: username.value,
     password: password.value,
@@ -57,34 +74,32 @@ signUpBtn.addEventListener('click', evt => {
     birthday: birth.value
   }
   sentData(data)
+    .then(status => {
+      if (status === 409) {
+        return usernameDd.appendChild(warnUsername)
+      }
+      if (status === 400) {
+        return alert('Please fill the form out')
+      }
+
+      alert('Sign Up Completed')
+      location.href = 'sign-in.html'
+    })
+    .catch(err => {
+      console.log(err)
+      alert('Registration failed')
+    })
 })
 
-const HOST = 'https://free-gce.akiya.com.tw/auth/register'
+const HOST = 'https://free-gce.akiya.com.tw'
 
 const sentData = data => {
-  fetch(HOST, {
+  return fetch(`${HOST}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     // mode: 'no-cors',
     body: JSON.stringify(data)
-  })
-    .then(res => {
-      console.log(res.status)
-      if (res.status === 409) {
-        usernameDd.appendChild(warnUsername)
-      } else if (res.status === 400) {
-        alert('Please fill the form out')
-      } else {
-        console.log(res)
-        alert('Sign Up Completed')
-        location.href = 'sign-in.html'
-      }
-    })
-    .catch(err => {
-      debugger
-      console.log(err)
-      alert('Registration failed')
-    })
+  }).then(res => res.status)
 }
