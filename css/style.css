@@ -8,7 +8,11 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 30px 0 0 0;
+    margin: 60px 0 0 0;
+}
+
+.sign-up-dd {
+    height: 75px;
 }
 
 form {
@@ -18,15 +22,15 @@ form {
 }
 
 dl {
-    margin: 5px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 dd {
     width: 280px;
-    margin: 0 0 30px 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    margin: 15px 0 0 0;
 }
 
 label {
@@ -51,7 +55,11 @@ input {
 
 #sign-up-btn {
     background-color: #15B029;
+    position: relative;
+    outline: none;
     border: none;
+    border-bottom: none;
+    border-radius: 5px;
     width: 80px;
     font-size: 1rem;
     padding: 5px;
@@ -62,19 +70,24 @@ input {
 
 #sign-in-btn {
     background-color: #F19023;
+    outline: none;
     border: none;
+    border-radius: 5px;
     width: 80px;
     font-size: 1rem;
     padding: 5px;
     -webkit-box-shadow: 0px 6px 0px #C26600;
     -moz-box-shadow: 0px 6px 0px #C26600;
     box-shadow: 0px 6px 0px #C26600;
+    margin: 30px 0 0 0;
 }
 
 #sign-out-btn {
     background-color: #4B40C8;
+    outline: none;
     color: white;
     border: none;
+    border-radius: 5px;
     width: 80px;
     font-size: 1rem;
     padding: 5px;
@@ -93,7 +106,17 @@ input {
     padding: 30px 0 0 0;
 }
 
-p {
+.userP {
     border-bottom: 1px solid #4B40C8;
     padding: 8px;
+}
+
+.warn {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: #F20202;
+    border: 2px solid #F20202;
+    border-radius: 5px;
+    margin: 5px 0 0 0;
 }
