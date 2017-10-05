@@ -46,9 +46,9 @@ signOutBtn.addEventListener('click', function(evt) {
   signOutBtn.style.top = '3px'
   signOutBtn.style.borderBottom = '3px solid #231C7B'
   setTimeout(() => {
-    siOutBtn.style.top = '0'
-    siOutBtn.style.borderBottom = 'none'
-    siOutBtn.style.boxShadow = '0px 6px 0px #231C7B'
+    signOutBtn.style.top = '0'
+    signOutBtn.style.borderBottom = 'none'
+    signOutBtn.style.boxShadow = '0px 6px 0px #231C7B'
   }, 100)
   setTimeout(signOut(), 101)
 })

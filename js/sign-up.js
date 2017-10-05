@@ -99,7 +99,6 @@ const sentData = data => {
     headers: {
       'Content-Type': 'application/json'
     },
-    // mode: 'no-cors',
     body: JSON.stringify(data)
   }).then(res => res.status)
 }
