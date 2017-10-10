@@ -83,7 +83,7 @@ signUpBtn.addEventListener('click', evt => {
       }
 
       alert('Sign Up Completed')
-      location.href = 'sign-in.html'
+      location.href = '../index.html'
     })
     .catch(err => {
       console.log(err)

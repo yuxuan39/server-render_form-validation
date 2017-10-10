@@ -51,7 +51,7 @@ const sentData = data => {
     })
     .then(data => {
       sessionStorage.userdata = data.data.token
-      location.href = 'userdata.html'
+      location.href = './html/userdata.html'
     })
     .catch(err => {
       console.log(err)
