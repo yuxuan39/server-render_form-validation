@@ -53,7 +53,7 @@ signOutBtn.addEventListener('click', function(evt) {
   setTimeout(signOut(), 101)
 })
 
-const HOST = 'http://free-gce.akiya.com.tw/auth/logout'
+const HOST = 'https://free-gce.akiya.com.tw/auth/logout'
 const signOut = evt => {
   fetch(HOST, {
     method: 'POST',
